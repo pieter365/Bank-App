@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+//route for the homepage
+Route::get('/', 'SessionsController@index');
+
+//route the CSV section
+Route::group(['prefix' => 'csv'], function() {
+  	Route::get('/', 'CsvController@index');
+  	Route::post('/import', 'CsvController@create');
+});
+
+//route the form section
+Route::group(['prefix' => 'form'], function() {
+  	Route::get('/', 'FormController@index');
+  	Route::post('/submit', 'FormController@create');
 });
