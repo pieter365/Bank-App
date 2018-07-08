@@ -15,7 +15,7 @@ class SessionsController extends Controller
     public function index() {
         //this is were we are going to check for the sessions
         $sessionData = 'dummy data';
-        return view('views.home.index', compact('sessionData'));
+        return view('views.home', compact('sessionData'));
     }
 
     /**
