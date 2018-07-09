@@ -19,6 +19,7 @@ Route::get('/', 'SessionsController@index');
 Route::group(['prefix' => 'csv'], function() {
   	Route::get('/', 'CsvController@index');
   	Route::post('/import', 'CsvController@create');
+  	Route::post('/import_csv', 'CsvController@parseImport')->name('import_csv');
 });
 
 //route the form section
